@@ -3,10 +3,14 @@ package main
 import "fmt"
 
 func main()  {
-	var meters float64
-	fmt.Print("Enter meters swam: ")
-	fmt.Scan(&meters)
+	a := 43
+	fmt.Println(a)   // 43
+	fmt.Println(&a)  // 0xc042054080
 
-	yards := meters * metersToYards
-	fmt.Println(meters, " meters is", yards, " yards.")
+	var b = &a
+	fmt.Println(b)  // 0xc042054080
+	fmt.Println(*b)  // 43
+
+	*b = 42 // change the value at this address to 42
+	fmt.Println(*b)
 }
